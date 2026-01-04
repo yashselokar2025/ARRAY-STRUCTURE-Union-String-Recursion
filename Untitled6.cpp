@@ -1,20 +1,20 @@
 #include<stdio.h>
+#include<string.h>
+struct student{
+	int roll;
+	char name[20];
+	float marks;
+};
+void update(struct student *s){
+	s->marks += 5;
+}
+void display(struct student s){
+	printf("Roll:%d\nName:%s\nMarks:%2f\n",s.roll, s.name, s.marks);
+}
 int main()
 {
-	int arr[5];
-	int i,k,sum = 0;
-	
-	for(i=0;i<=4;i++)
-	{
-		printf("Enter the 5 integers to store\n");
-		scanf("%d",&arr[i]);
-		
-	}
-	for(i=0;i<=4;i++)
-	{
-			printf("arr[%d] = %d\n",i,arr[i]);
-			sum = sum + arr[i];
-		
-	}
-	printf("sum  :%d \n",sum);
+	struct student s1={1,"Animesh",85.0};
+	update(&s1);
+	display(s1);
+	return 0;
 }
